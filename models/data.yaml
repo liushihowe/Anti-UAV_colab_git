@@ -1,0 +1,8 @@
+path: /root/Anti-UAV
+train: ../datasets/images/train
+val: ../datasets/images/train
+# test: ''
+
+nc: 8
+names: ['AIRPLANE_V', 'BIRD_V', 'DRONE_V', 'HELICOPTER_V', 'AIRPLANE_IR', 'BIRD_IR', 'DRONE_IR', 'HELICOPTER_IR']
+
