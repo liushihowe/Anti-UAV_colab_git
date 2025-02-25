@@ -27,6 +27,8 @@
 ↓↓↓↓↓↓↓↓↓下图是 yolo 官方的模型结构
 ![alt text](image-2.png)
 
+https://github.com/liushihowe/Anti-UAV_colab_git/tree/81b25274069f0f0fb9394a566c35e8a0e52c8928/ReadMe
+
 ~~在yolo后加个transformer模块,当某张图片的置信度小于某个阈值时启用,既能增强检测准确度,又能在不需要的时候节约资源~~
 
 ~~对于视频帧来说,可以通过前一帧和后一帧来预测当前帧,对于这种小目标检测有奇效~~
