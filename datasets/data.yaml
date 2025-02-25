@@ -1,0 +1,7 @@
+path: D:/study/2025_gradproj/Anti-UAV
+train: ./1_train/images/train
+val: ./2_val/images/train
+test: ./3_test/images/train
+
+nc: 8
+names: ['AIRPLANE_IR', 'BIRD_IR', 'DRONE_IR', 'HELICOPTER_IR', 'AIRPLANE_V', 'BIRD_V', 'DRONE_V', 'HELICOPTER_V']

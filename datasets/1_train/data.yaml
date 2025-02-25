@@ -1,0 +1,6 @@
+train: ../YOLO_Dataset/images/train
+val: ../YOLO_Dataset/images/val    # 根据需要添加验证集
+test:  # 测试集路径
+
+nc: 4
+names: ['AIRPLANE', 'BIRD', 'DRONE', 'HELICOPTER']
