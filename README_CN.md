@@ -3,7 +3,7 @@
 如何使用:  
 
 - 第一步: ```pip install ultralytics```
-* 第二步: ```python 1_train.py```
+- 第二步: ```python 1_train.py```
 
 精简的 yolov11 框架(适用于检测小目标)
 
