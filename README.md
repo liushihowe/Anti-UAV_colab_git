@@ -27,9 +27,13 @@
 ↓↓↓↓↓↓↓↓↓下图是 yolo 官方的模型结构
 ![alt text](image-2.png)
 
+<<<<<<< HEAD
 
 
 已放弃的想法:
+=======
+https://github.com/liushihowe/Anti-UAV_colab_git/tree/81b25274069f0f0fb9394a566c35e8a0e52c8928/ReadMe
+>>>>>>> bd100a814ef719d13011a7df94e074235420be43
 
 ~~在yolo后加个transformer模块,当某张图片的置信度小于某个阈值时启用,既能增强检测准确度,又能在不需要的时候节约资源~~
 
