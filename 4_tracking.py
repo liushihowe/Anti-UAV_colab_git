@@ -4,7 +4,7 @@ from ultralytics import YOLO
 from collections import defaultdict 
 # Load the YOLO11 model
 model = YOLO("./runs/train_2025-02-05_08-29-53/weights/best.pt")
-video_path = "datasets\\test\IR_BIRD_036.mp4"
+video_path = "datasets/测试/IR_BIRD_036.mp4"
 cap = cv2.VideoCapture(video_path)
 
 track_history = defaultdict(lambda: [])
@@ -23,7 +23,7 @@ while cap.isOpened():
 
         # Get the boxes and track IDs
         boxes = results[0].boxes.xywh.cpu()
-        track_ids = results[0].boxes.id.int().cpu().tolist()
+        # track_ids = results[0].boxes.id.int().cpu().tolist()
 
         cv2.imshow("YOLO11 Tracking", annotated_frame)
         # Break the loop if 'q' is pressed

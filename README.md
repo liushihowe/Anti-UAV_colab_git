@@ -27,10 +27,22 @@
 ↓↓↓↓↓↓↓↓↓下图是 yolo 官方的模型结构
 ![alt text](image-2.png)
 
-<<<<<<< HEAD
-[![GitHub视频](https://github.com/user-attachments/assets/ce9fb183-e103-404c-8de8-50396ecd5829)%5D(https://github.com/user-attachments/assets/ce9fb183-e103-404c-8de8-50396ecd5829)
 
 https://github.com/user-attachments/assets/ce9fb183-e103-404c-8de8-50396ecd5829
+
+数据集友链: 
+- 无人机数据集:https://github.com/DroneDetectionThesis/Drone-detection-dataset 非常推荐使用,标注完整⭐⭐⭐⭐⭐)
+
+    此数据集的数据处理代码(原始数据为视频文件,且标注文件为.mat文件,可用如下脚本进行抽帧并归一化标注)
+
+- 2025CVPR第四届反无人机研讨会: https://anti-uav.github.io/
+- 科学数据银行_地/空背景下红外图像弱小飞机目标检测跟踪数据集: https://www.scidb.cn/detail?dataSetId=720626420933459968
+(此数据集只标注目标的中心点)
+- 无人机与鸟类检测: https://www.mdpi.com/1424-8220/21/8/2824
+- https://arxiv.org/abs/1612.00192
+
+
+
 
 已放弃的想法:
 

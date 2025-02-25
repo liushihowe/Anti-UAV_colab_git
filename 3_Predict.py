@@ -19,7 +19,7 @@ if __name__ == '__main__':
     
 
 # Read an image using OpenCV
-    path = "datasets\\test\IR_BIRD_036.mp4"
+    path = "./datasets\测试\IR_BIRD_036.mp4"
     source = cv2.imread(path)
     results = model.predict(source=source, save=False, imgsz=320, conf=0.5)  # list of Results objects
     results[0].show()  # display to screen
@@ -34,7 +34,7 @@ if __name__ == '__main__':
 
 
     # Open the video file
-    video_path = "datasets\\test\IR_BIRD_036.mp4"
+    video_path = "./datasets/测试/IR_BIRD_036.mp4"
     cap = cv2.VideoCapture(video_path)
 
     # Loop through the video frames
