@@ -29,9 +29,8 @@
 
 <<<<<<< HEAD
 [![GitHub视频](https://github.com/user-attachments/assets/ce9fb183-e103-404c-8de8-50396ecd5829)%5D(https://github.com/user-attachments/assets/ce9fb183-e103-404c-8de8-50396ecd5829)
-=======
-https://github.com/liushihowe/Anti-UAV_colab_git/tree/81b25274069f0f0fb9394a566c35e8a0e52c8928/ReadMe
->>>>>>> 59d12677eb9d1a6ec60876fbf1a9c61bb0160a96
+
+https://github.com/user-attachments/assets/ce9fb183-e103-404c-8de8-50396ecd5829
 
 已放弃的想法:
 
