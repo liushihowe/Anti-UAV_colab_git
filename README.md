@@ -27,28 +27,63 @@
 ↓↓↓↓↓↓↓↓↓下图是 yolo 官方的模型结构
 ![alt text](image-2.png)
 
+<https://github.com/user-attachments/assets/ce9fb183-e103-404c-8de8-50396ecd5829>
 
-https://github.com/user-attachments/assets/ce9fb183-e103-404c-8de8-50396ecd5829
+数据集友链:
 
-数据集友链: 
-- 无人机数据集:https://github.com/DroneDetectionThesis/Drone-detection-dataset 非常推荐使用,标注完整⭐⭐⭐⭐⭐)
+- [Dataset containing IR, visible and audio data to be used to train drone detection systems.](https://github.com/DroneDetectionThesis/Drone-detection-dataset) 非常推荐使用,标注完整⭐⭐⭐⭐⭐)
 
-    此数据集的数据处理代码(原始数据为视频文件,且标注文件为.mat文件,可用如下脚本进行抽帧并归一化标注)
+    此数据集的数据处理代码:[作者提供的一个处理脚本](https://github.com/DroneDetectionThesis/Drone-detection-dataset/blob/6598976ba1a5f5adf3f309b570254582f909c0f3/Data/Create_a_dataset_from_videos_and_labels.m)
 
-- 2025CVPR第四届反无人机研讨会: https://anti-uav.github.io/
-- 科学数据银行_地/空背景下红外图像弱小飞机目标检测跟踪数据集: https://www.scidb.cn/detail?dataSetId=720626420933459968
-(此数据集只标注目标的中心点)
-- 无人机与鸟类检测: https://www.mdpi.com/1424-8220/21/8/2824
-- https://arxiv.org/abs/1612.00192
+    可使用如下脚本进行全部文件提取并生成yolo格式的标注文件 [抽帧并归一化标注.m](https://github.com/liushihowe/Anti-UAV_colab_git/blob/6c3b72415735c79f3b6e0fd91bcfe206a675f791/datasets/%E6%8A%BD%E5%B8%A7%E5%B9%B6%E8%BD%AC%E5%8C%96%E4%B8%BAyolo%E6%A0%87%E6%B3%A8%E7%9A%84%E6%A0%BC%E5%BC%8F.m))
 
+    核心代码:
 
+    ```matlab
+    for cls_idx = 1:length(class_names)
+        bboxes = trainingData.(class_names{cls_idx}){i};
+        if ~isempty(bboxes)
+            % 处理每个边界框 (MATLAB 可能返回多行)
+            for j = 1:size(bboxes, 1)
+                % 获取绝对坐标
+                x = bboxes(j,1);
+                y = bboxes(j,2);
+                w = bboxes(j,3);
+                h = bboxes(j,4);
+                
+                % 转换为归一化坐标
+                x_center = (x + w/2) / img_width;
+                y_center = (y + h/2) / img_height;
+                norm_w = w / img_width;
+                norm_h = h / img_height;
+                
+                % 写入文件 (格式: class_id x_center y_center width height)
+                fprintf(fid, '%d %.6f %.6f %.6f %.6f\n',...
+                    class_dict(class_names{cls_idx}),...
+                    x_center, y_center, norm_w, norm_h);
 
+                % fprintf(fid, '%d %.6f %.6f %.6f %.6f\n',...
+                %     0,...
+                %     x_center, y_center, norm_w, norm_h);
+
+            end
+        end
+    end
+    ```
+
+- [2025CVPR第四届反无人机研讨会](https://anti-uav.github.io/)
+- [科学数据银行_地/空背景下红外图像弱小飞机目标检测跟踪数据集](https://www.scidb.cn/detail?dataSetId=720626420933459968)
+
+    (此数据集只标注目标的中心点)
+- [无人机与鸟类检测](https://www.mdpi.com/1424-8220/21/8/2824)
+- <https://arxiv.org/abs/1612.00192>
+- [🔥🔥Official Repository for Anti-UAV🔥🔥](https://github.com/ZhaoJ9014/Anti-UAV)
 
 已放弃的想法:
 
 ~~在yolo后加个transformer模块,当某张图片的置信度小于某个阈值时启用,既能增强检测准确度,又能在不需要的时候节约资源~~
 
-~~对于视频帧来说,可以通过前一帧和后一帧来预测当前帧,对于这种小目标检测有奇效~~
+~~对于视频帧来说,可以通过前一帧和后一帧来预测当前帧,对于这种小目标检测应该会很有用~~
 
 基于深度学习的无人机识别与追踪
 
