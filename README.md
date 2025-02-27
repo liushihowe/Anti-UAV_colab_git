@@ -37,7 +37,9 @@
 
 <https://github.com/user-attachments/assets/ce9fb183-e103-404c-8de8-50396ecd5829>
 
-![alt text](./ReadMe/IR_BIRD_066.avi)
+识别结果(错误将鸟识别为无人机😒😒😒)
+
+<https://github.com/user-attachments/assets/a9400275-4c3e-4295-b5ac-343f2c0593ec>
 
 数据集友链:
 
