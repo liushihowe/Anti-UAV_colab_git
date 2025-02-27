@@ -32,6 +32,8 @@
 
 数据集一览:
 
+下面那个小点就是要检测的目标
+
 ![alt text](./ReadMe/1.bmp)
 ![alt text](./ReadMe/2.bmp)
 
@@ -40,6 +42,8 @@
 识别结果(错误将鸟识别为无人机😒😒😒)
 
 <https://github.com/user-attachments/assets/a9400275-4c3e-4295-b5ac-343f2c0593ec>
+
+![alt text](./ReadMe/val_batch2_labels.jpg)
 
 数据集友链:
 
