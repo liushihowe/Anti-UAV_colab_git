@@ -18,20 +18,11 @@ if __name__ == '__main__':
     # Run inference on the source
     
 
-# Read an image using OpenCV
-    path = "./datasets\测试\IR_BIRD_036.mp4"
+    # Read an image using OpenCV
+    path = "./datasets/测试/94.bmp"
     source = cv2.imread(path)
     results = model.predict(source=source, save=False, imgsz=320, conf=0.5)  # list of Results objects
     results[0].show()  # display to screen
-
-
-    # img=cv2.imread(path)
-    # cv2.imshow("原图:",img)
-    # # cv2.imshow("预测:",results)
-    # cv2.waitKey(0)
-    # cv2.destroyAllWindows()
-
-
 
     # Open the video file
     video_path = "./datasets/测试/IR_BIRD_036.mp4"

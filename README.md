@@ -37,9 +37,12 @@
 ![alt text](./ReadMe/1.bmp)
 ![alt text](./ReadMe/2.bmp)
 
+![alt text](./ReadMe/IR_BIRD_070_15_181.jpg)
+![alt text](./ReadMe/IR_DRONE_129_21_251.jpg)
+
 <https://github.com/user-attachments/assets/ce9fb183-e103-404c-8de8-50396ecd5829>
 
-识别结果(错误将鸟识别为无人机😒😒😒)
+识别结果(错误将鸟识别为无人机😒😒😒,不过可以发现目标)
 
 <https://github.com/user-attachments/assets/a9400275-4c3e-4295-b5ac-343f2c0593ec>
 
@@ -49,7 +52,7 @@
 
 - [Dataset containing IR, visible and audio data to be used to train drone detection systems.](https://github.com/DroneDetectionThesis/Drone-detection-dataset) 非常推荐使用,标注完整⭐⭐⭐⭐⭐)
 
-    此数据集的数据处理代码:[作者提供的一个处理脚本](https://github.com/DroneDetectionThesis/Drone-detection-dataset/blob/6598976ba1a5f5adf3f309b570254582f909c0f3/Data/Create_a_dataset_from_videos_and_labels.m)
+    此数据集的数据处理代码:[原作者提供的一个处理脚本](https://github.com/DroneDetectionThesis/Drone-detection-dataset/blob/6598976ba1a5f5adf3f309b570254582f909c0f3/Data/Create_a_dataset_from_videos_and_labels.m)
 
     可使用如下脚本进行全部文件提取并生成yolo格式的标注文件 [抽帧并归一化标注.m](https://github.com/liushihowe/Anti-UAV_colab_git/blob/6c3b72415735c79f3b6e0fd91bcfe206a675f791/datasets/%E6%8A%BD%E5%B8%A7%E5%B9%B6%E8%BD%AC%E5%8C%96%E4%B8%BAyolo%E6%A0%87%E6%B3%A8%E7%9A%84%E6%A0%BC%E5%BC%8F.m))
 
@@ -100,7 +103,5 @@
 ~~在yolo后加个transformer模块,当某张图片的置信度小于某个阈值时启用,既能增强检测准确度,又能在不需要的时候节约资源~~
 
 ~~对于视频帧来说,可以通过前一帧和后一帧来预测当前帧,对于这种小目标检测应该会很有用~~
-
-基于深度学习的无人机识别与追踪
 
 基于深度学习的无人机识别与追踪
