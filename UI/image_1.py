@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\study\2025_gradproj\Anti-UAV_colab_git\UI\MainWindow.ui'
+# Form implementation generated from reading ui file 'd:\study\code\UI\MainWindow.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -18,18 +18,18 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(120, 60, 531, 512))
+        self.label.setGeometry(QtCore.QRect(100, 60, 512, 512))
         self.label.setStyleSheet("background-color: rgb(211, 227, 253);")
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(650, 60, 531, 512))
+        self.label_2.setGeometry(QtCore.QRect(650, 60, 512, 512))
         self.label_2.setStyleSheet("background-color: rgb(211, 227, 253);")
         self.label_2.setObjectName("label_2")
         self.textBrowser = QtWidgets.QTextBrowser(self.centralwidget)
-        self.textBrowser.setGeometry(QtCore.QRect(120, 10, 1061, 41))
+        self.textBrowser.setGeometry(QtCore.QRect(100, 10, 511, 41))
         self.textBrowser.setObjectName("textBrowser")
         self.layoutWidget = QtWidgets.QWidget(self.centralwidget)
-        self.layoutWidget.setGeometry(QtCore.QRect(10, 60, 91, 381))
+        self.layoutWidget.setGeometry(QtCore.QRect(10, 60, 77, 381))
         self.layoutWidget.setObjectName("layoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.layoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -60,6 +60,6 @@ class Ui_MainWindow(object):
         self.label.setText(_translate("MainWindow", "TextLabel"))
         self.label_2.setText(_translate("MainWindow", "TextLabel"))
         self.pushButton.setText(_translate("MainWindow", "打开文件"))
-        self.pushButton_2.setText(_translate("MainWindow", "播放"))
-        self.pushButton_3.setText(_translate("MainWindow", "停止"))
+        self.pushButton_2.setText(_translate("MainWindow", "打开摄像头"))
+        self.pushButton_3.setText(_translate("MainWindow", "打开"))
         self.pushButton_4.setText(_translate("MainWindow", "关于"))

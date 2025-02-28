@@ -1,19 +1,3 @@
-# import sys
-# from PyQt5.QtWidgets import QMainWindow,QApplication,QWidget
-# from Ui_主界面 import Ui_MainWindow  #导入你写的界面类
- 
- 
-# class MyMainWindow(QMainWindow, Ui_MainWindow): #这里也要记得改
-#     def __init__(self,parent =None):
-#         super(MyMainWindow, self).__init__(parent)
-#         self.setupUi(self)
- 
-# if __name__ == "__main__":
-#     app = QApplication(sys.argv)
-#     myWin = MyMainWindow()
-#     myWin.show()
-#     sys.exit(app.exec_())    
-
 import sys
 from PyQt5.QtWidgets import QMessageBox, QFileDialog, QLineEdit
 from PyQt5.QtGui import *
@@ -33,8 +17,10 @@ import cv2
 #         self.setupUi(self)
 #         self.image_open = Image_open()
 #         self.pushButton.clicked.connect(self.image_open.show)
-### 未详细说明，请参考前三篇博客
-        
+### 
+
+# pyinstaller --name=xformat-tools --onefile --noconsole main.py 
+
 class Image_open(QMainWindow, image.Ui_MainWindow):
     def __init__(self, parent=None):
         super(Image_open, self).__init__(parent)

@@ -17,9 +17,9 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>120</x>
       <y>60</y>
-      <width>512</width>
+      <width>531</width>
       <height>512</height>
      </rect>
     </property>
@@ -35,7 +35,7 @@
      <rect>
       <x>650</x>
       <y>60</y>
-      <width>512</width>
+      <width>531</width>
       <height>512</height>
      </rect>
     </property>
@@ -49,9 +49,9 @@
    <widget class="QTextBrowser" name="textBrowser">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>120</x>
       <y>10</y>
-      <width>511</width>
+      <width>1061</width>
       <height>41</height>
      </rect>
     </property>
@@ -61,7 +61,7 @@
      <rect>
       <x>10</x>
       <y>60</y>
-      <width>77</width>
+      <width>91</width>
       <height>381</height>
      </rect>
     </property>
@@ -76,14 +76,14 @@
      <item>
       <widget class="QPushButton" name="pushButton_2">
        <property name="text">
-        <string>打开摄像头</string>
+        <string>播放</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="pushButton_3">
        <property name="text">
-        <string>打开</string>
+        <string>停止</string>
        </property>
       </widget>
      </item>

@@ -1,9 +1,24 @@
 # Anti-UAV_colab💀💀💀
 
+## 基于深度学习的无人机识别与追踪
+
 如何使用:  
 
-- 第一步: ```pip install ultralytics```
-- 第二步: ```python 1_train.py```
+- 第一步:
+
+    ```pip install ultralytics```
+
+    ```pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126```
+
+- 第二步:
+
+    ```python 1_train.py``` 以开始训练
+
+    ```python 2_val.py``` 以开始验证模型性能精度
+
+    ```python 3_Predict.py``` 以开始检测图片或视频流
+
+    ```python 4_tracking.py``` 以开始追踪目标,为不同目标分配不同ID以进行计数
 
 精简的 yolov11_i 框架(适用于检测小目标)______修改自2024_9_27发布的[yoloV11](https://docs.ultralytics.com/)🥰🥰🥰
 
@@ -32,10 +47,12 @@
 
 数据集一览:
 
-下面那个小点就是要检测的目标
+下图为真实标签
 
-![alt text](./ReadMe/1.bmp)
-![alt text](./ReadMe/2.bmp)
+![alt text](./ReadMe/val_batch2_labels.jpg)
+
+下图为预测标签
+![alt text](./ReadMe/val_batch2_pred.jpg)
 
 ![alt text](./ReadMe/IR_BIRD_070_15_181.jpg)
 ![alt text](./ReadMe/IR_DRONE_129_21_251.jpg)
@@ -45,8 +62,6 @@
 识别结果(错误将鸟识别为无人机😒😒😒,不过可以发现目标)
 
 <https://github.com/user-attachments/assets/a9400275-4c3e-4295-b5ac-343f2c0593ec>
-
-![alt text](./ReadMe/val_batch2_labels.jpg)
 
 数据集友链:
 
@@ -103,5 +118,3 @@
 ~~在yolo后加个transformer模块,当某张图片的置信度小于某个阈值时启用,既能增强检测准确度,又能在不需要的时候节约资源~~
 
 ~~对于视频帧来说,可以通过前一帧和后一帧来预测当前帧,对于这种小目标检测应该会很有用~~
-
-基于深度学习的无人机识别与追踪
