@@ -145,25 +145,28 @@ class Image_open(QMainWindow, image.Ui_MainWindow):
 
 
             model = YOLO("./runs/train_yoloi.yaml_2025-03-02_14-12-09/weights/best.pt")
-            results = model.predict(source=img, save=False, imgsz=320, conf=0.5) 
-
+            results1 = model.predict(source=img, save=False, imgsz=320, conf=0.5) 
+            results2 = model.track(source=img, conf=0.5, iou=0.5, show=False,save=False, persist=True, tracker="./models/bytetrack.yaml")
             # 视频流的长和宽
             height, width = cur_frame.shape[:2]
             # pixmap = QImage(cur_frame, width, height, QImage.Format_RGB888)
             # pixmap = QPixmap.fromImage(pixmap)
 
-            pixmap = QImage(results[0].plot(), width, height, QImage.Format_RGB888)
+            pixmap = QImage(results1[0].plot(), width, height, QImage.Format_RGB888)
             pixmap = QPixmap.fromImage(pixmap)
+
+            pixmap2 = QImage(results2[0].plot(), width, height, QImage.Format_RGB888)
+            pixmap2 = QPixmap.fromImage(pixmap2)
 
             # 获取是视频流和label窗口的长宽比值的最大值，适应label窗口播放，不然显示不全
             ratio = max(width/self.label.width(), height/self.label.height())
             pixmap.setDevicePixelRatio(ratio)
+            pixmap2.setDevicePixelRatio(ratio)
             # 视频流置于label中间部分播放
             self.label.setAlignment(Qt.AlignCenter)
             self.label.setPixmap(pixmap)
-
             self.label_2.setAlignment(Qt.AlignCenter)
-            self.label_2.setPixmap(pixmap)
+            self.label_2.setPixmap(pixmap2)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
