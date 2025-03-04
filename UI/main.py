@@ -143,7 +143,8 @@ class Image_open(QMainWindow, image.Ui_MainWindow):
         if ret:
             cur_frame = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-            model = YOLO("../runs/train_2025-02-05_08-29-53/weights/best.pt")
+
+            model = YOLO("./runs/train_yoloi.yaml_2025-03-02_14-12-09/weights/best.pt")
             results = model.predict(source=img, save=False, imgsz=320, conf=0.5) 
 
             # 视频流的长和宽

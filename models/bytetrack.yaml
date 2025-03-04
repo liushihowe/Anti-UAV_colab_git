@@ -1,0 +1,32 @@
+# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+
+# Default Ultralytics settings for ByteTrack tracker when using mode="track"
+# For documentation and examples see https://docs.ultralytics.com/modes/track/
+# For ByteTrack source code see https://github.com/ifzhang/ByteTrack
+
+tracker_type: bytetrack # tracker type, ['botsort', 'bytetrack']
+
+#(1) 高置信度匹配 (track_high_thresh: 0.25)
+#只使用 置信度 > 0.25 的检测框进行第一步匹配，减少误匹配。
+track_high_thresh: 0.05 # threshold for the first association
+
+#(2) 低置信度匹配 (track_low_thresh: 0.1)
+#如果目标在第一步未匹配成功，允许匹配 置信度 0.1~0.25 的检测框。
+track_low_thresh: 0.1 # threshold for the second association
+
+#新目标的初始化阈值，即如果一个目标检测框没有匹配上任何现有轨迹，且其置信度高于 new_track_thresh（默认 0.25），则创建新的轨迹。
+#这个值决定了新目标的最低置信度要求，避免低置信度的误检成为新目标。
+new_track_thresh: 0.25 # threshold for init new track if the detection does not match any tracks
+
+#(3) 轨迹缓存 (track_buffer: 30)
+#目标短暂遮挡或丢失后，在 30 帧内匹配不上才删除轨迹，允许目标消失一会后重新出现。
+track_buffer: 30 # buffer to calculate the time when to remove tracks
+
+#(4) 目标 IoU 关联 (match_thresh: 0.8)
+#只有当两个目标的 IoU > 0.8 才认为是同一物体，减少误匹配。
+match_thresh: 0.8 # threshold for matching tracks
+
+#(5) 置信度融合 (fuse_score: True)
+#计算 IoU 时，会融合目标检测的置信度，避免置信度低的目标影响匹配结果。
+fuse_score: True # Whether to fuse confidence scores with the iou distances before matching
+# min_box_area: 10  # threshold for min box areas(for tracker evaluation, not used for now)
