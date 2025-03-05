@@ -8,7 +8,7 @@ tracker_type: bytetrack # tracker type, ['botsort', 'bytetrack']
 
 #(1) 高置信度匹配 (track_high_thresh: 0.25)
 #只使用 置信度 > 0.25 的检测框进行第一步匹配，减少误匹配。
-track_high_thresh: 0.05 # threshold for the first association
+track_high_thresh: 0.25 # threshold for the first association
 
 #(2) 低置信度匹配 (track_low_thresh: 0.1)
 #如果目标在第一步未匹配成功，允许匹配 置信度 0.1~0.25 的检测框。

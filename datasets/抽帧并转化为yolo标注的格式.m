@@ -1,5 +1,5 @@
 
-label_dir = 'D:\study\2025_gradproj\数据集\分好的\3_test'; % 根据实际情况修改路径
+label_dir = 'D:\study\2025_gradproj\数据集\分好的\3_test'; % 路径
 
 % 获取所有符合命名规则的.mat文件
 file_list = dir(fullfile(label_dir, 'IR_*_LABELS.mat')); 
@@ -16,8 +16,10 @@ end
 
 mkdir('Training_data_IR')
 addpath('Training_data_IR');
+
 %% Produce the training dataset
 onesMatrix = ones(1, length(gTruth));  % 创建一个 length(gTruth) x 2 的全一数组
+
 trainingData = objectDetectorTrainingData(gTruth,...
     'SamplingFactor', 10 * onesMatrix, ...
     'WriteLocation','Training_data_IR');
@@ -82,6 +84,7 @@ for i = 1:height(trainingData)
     % 复制图片到 YOLO 目录
     copyfile(img_path, fullfile(yolo_dir, 'images', 'train', [img_name '.jpg']));
 end
+
 
 %% 生成 data.yaml 配置文件
 yaml_content = {

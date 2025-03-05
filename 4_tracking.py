@@ -6,6 +6,7 @@ from collections import defaultdict
 model = YOLO("./runs/train_yoloi.yaml_2025-03-02_14-12-09/weights/best.pt")
 # model = YOLO("./runs/train_yolon.yaml_2025-03-03_08-03-43/weights/best.pt")
 video_path = "./datasets/测试/V_BIRD_005.mp4"
+video_path = "D:\study\\2025_gradproj\Anti-UAV_colab_git\datasets\测试\V_DRONE_099.mp4"
 
 results = model.track(source=video_path, conf=0.15, iou=0.5, show=True,save=True, persist=True, tracker="./models/bytetrack.yaml")
 
