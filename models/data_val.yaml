@@ -5,4 +5,5 @@ val: ./datasets/2_val/images/train
 test: ./datasets/3_test/images/train
 
 nc: 8
-names: ['AIRPLANE_IR', 'BIRD_IR', 'DRONE_IR', 'HELICOPTER_IR', 'AIRPLANE_V', 'BIRD_V', 'DRONE_V', 'HELICOPTER_V']
+names: ['AIRPLANE_V', 'BIRD_V', 'DRONE_V', 'HELICOPTER_V', 'AIRPLANE_IR', 'BIRD_IR', 'DRONE_IR', 'HELICOPTER_IR']
+
