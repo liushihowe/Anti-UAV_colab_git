@@ -10,6 +10,9 @@ import sqlite3
 from ultralytics.models import YOLO
 import cv2 
 
+from PIL import Image
+import numpy as np
+
 # ### 主页面设计，略
 # class MainWindow(QMainWindow, mainwindow.Ui_MainWindow):
 #     def __init__(self, parent=None):
@@ -74,11 +77,27 @@ class Image_open(QMainWindow, image.Ui_MainWindow):
                 h = img.height()
                 ratio = max(w / self.label.width(), h / self.label.height())
                 img.setDevicePixelRatio(ratio)
+
+                model = YOLO("./best.pt")
+                results1 = model.predict(source=self.img_path, save=False, imgsz=[w, h], conf=0.1, show=False) 
+                
+                # 这就是带标注框的图片
+                # img_np_resized = cv2.resize(img_np, (w, h))
+                img_np = results1[0].plot()  # 类型是 numpy.ndarray，格式是 RGB
+                img_np_resized = cv2.resize(img_np, (w, h))
+                # 获取尺寸
+                h1, w1, ch = img_np.shape
+                # 转为 QImage（YOLO 输出是 RGB 图像）
+                qimg = QImage(img_np_resized.data, w, h, ch * w, QImage.Format_RGB888)
+                # 转为 QPixmap
+                pixmap = QPixmap.fromImage(qimg)
+                # 设置到 QLabel
+                self.label_2.setAlignment(Qt.AlignCenter)
+                self.label_2.setPixmap(pixmap)  
+
                 self.label.setAlignment(Qt.AlignCenter)
                 self.label.setPixmap(img)
 
-                self.label_2.setAlignment(Qt.AlignCenter)
-                self.label_2.setPixmap(img)
         if self.video is None:
             QMessageBox.information(self, "警告", "我们暂时不支持此格式的文件！", QMessageBox.Ok)
 
@@ -145,7 +164,8 @@ class Image_open(QMainWindow, image.Ui_MainWindow):
 
 
             model = YOLO("./runs/train_yoloi.yaml_2025-03-02_14-12-09/weights/best.pt")
-            results1 = model.predict(source=img, save=False, imgsz=320, conf=0.5) 
+            model = YOLO("./best.pt")
+            results1 = model.predict(source=img, save=False, imgsz=320, conf=0.1, show=True) 
             results2 = model.track(source=img, conf=0.5, iou=0.5, show=False,save=False, persist=True, tracker="./models/bytetrack.yaml")
             # 视频流的长和宽
             height, width = cur_frame.shape[:2]
