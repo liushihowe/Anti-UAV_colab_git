@@ -14,7 +14,7 @@ import cv2
 # Load a pretrained YOLO11n model
 model = YOLO("./runs/train_yoloi.yaml_2025-03-02_14-12-09/weights/best.pt")
 video_path = "./datasets/测试/V_BIRD_005.mp4"
-video_path = "D:\study\\2025_gradproj\Anti-UAV_colab_git\datasets\测试\V_DRONE_099.mp4"
+video_path = r"./datasets\测试\IR_AIRPLANE_001.mp4"
 model.predict(source=video_path, show=True, save=True, imgsz=320, conf=0.25)
 
 # Run inference on the source
